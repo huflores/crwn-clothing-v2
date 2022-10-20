@@ -5,13 +5,13 @@ import {
     signInWithPopup,
     GoogleAuthProvider, 
     createUserWithEmailAndPassword,
-} from 'firebase/auth'
+} from 'firebase/auth';
 import {
     getFirestore,
     doc,
     getDoc,
     setDoc,
-} from 'firebase/firestore'
+} from 'firebase/firestore';
 
 const firebaseConfig = {
     apiKey: "AIzaSyCWhHc0mJ842kfxMhYv6PMKCc12A7abdoY",
@@ -27,7 +27,7 @@ const firebaseConfig = {
   const googleProvider = new GoogleAuthProvider();
 
   googleProvider.setCustomParameters({
-    prompt: "select_account",
+    prompt: 'select_account',
   });
 
   export const createUserProfileDocument = async (userAuth, additionalData) => {
@@ -68,9 +68,9 @@ const firebaseConfig = {
       }
     
       return userDocRef;
-  }
+  };
 
   export const createAuthUserWithEmailAndPassword = async (email, password) => {
-    if(!email || !password) return;
+    if (!email || !password) return;
     return await createUserWithEmailAndPassword(auth, email, password);
-  }
+  };
