@@ -7,12 +7,18 @@ import reportWebVitals from './reportWebVitals';
 import { UserProvider } from './contexts/user.context';
 
 import './index.scss';
+import { ProductsProvider } from './contexts/product.context';
+import { CartProvider } from './contexts/cart.context';
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <UserProvider>
-        <App />
+        <ProductsProvider>
+          <CartProvider>
+            <App />
+          </CartProvider>
+        </ProductsProvider>
       </UserProvider>
     </BrowserRouter>
   </React.StrictMode>,
